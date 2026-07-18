@@ -420,11 +420,11 @@ function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-         项目地址 & 联系方式
+         项目地址
         </a>
         <span className="fb-footer-sep">|</span>
         <Link className="fb-footer-link" to="/credits">
-         致谢名单
+         致谢名单 & 联系方式
         </Link>
       </footer>
     </div>
