@@ -416,7 +416,7 @@ function Home() {
       <footer className="fb-footer">
         <a
           className="fb-footer-link"
-          href="https://github.com"
+          href="https://github.com/Faldream/hubu-learn"
           target="_blank"
           rel="noopener noreferrer"
         >
