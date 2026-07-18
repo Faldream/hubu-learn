@@ -1,0 +1,58 @@
+[
+  {
+    "name": "复习资料",
+    "type": "directory",
+    "children": [
+      {
+        "name": "马克思主义原理",
+        "type": "directory",
+        "children": [
+          {
+            "name": "湖北大学《马克思主义基本原理》2019-2020学年期末试卷(2)(1).pdf",
+            "type": "file",
+            "path": "复习资料/马克思主义原理/湖北大学《马克思主义基本原理》2019-2020学年期末试卷(2)(1).pdf"
+          }
+        ]
+      },
+      {
+        "name": "数据结构",
+        "type": "directory",
+        "children": [
+          {
+            "name": "2018级数据结构(A卷).pdf",
+            "type": "file",
+            "path": "复习资料/数据结构/2018级数据结构(A卷).pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "试卷",
+    "type": "directory",
+    "children": [
+      {
+        "name": "马克思主义原理",
+        "type": "directory",
+        "children": [
+          {
+            "name": "湖北大学《马克思主义基本原理》2020-2021学年期末试卷(2)(1).pdf",
+            "type": "file",
+            "path": "试卷/马克思主义原理/湖北大学《马克思主义基本原理》2020-2021学年期末试卷(2)(1).pdf"
+          }
+        ]
+      },
+      {
+        "name": "数据结构",
+        "type": "directory",
+        "children": [
+          {
+            "name": "2021级数据结构(A卷).pdf",
+            "type": "file",
+            "path": "试卷/数据结构/2021级数据结构(A卷).pdf"
+          }
+        ]
+      }
+    ]
+  }
+]

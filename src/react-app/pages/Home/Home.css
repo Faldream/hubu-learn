@@ -1,0 +1,320 @@
+/* ========== 容器 ========== */
+.fb-container {
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.fb-inner {
+  max-width: 900px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+/* ========== 头部 ========== */
+.fb-header {
+  padding: 24px 32px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.fb-header-icon {
+  font-size: 28px;
+}
+
+.fb-header-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+/* ========== 工具栏 ========== */
+.fb-toolbar {
+  padding: 16px 32px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.fb-btn {
+  padding: 8px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  color: #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: inherit;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.fb-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #fff;
+}
+
+.fb-btn:active {
+  transform: scale(0.97);
+}
+
+/* ========== 面包屑 ========== */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex: 1;
+  font-size: 14px;
+  color: #aaa;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 4px 0;
+}
+
+.breadcrumb-link {
+  cursor: pointer;
+  color: #7eb8ff;
+  transition: color 0.2s;
+}
+
+.breadcrumb-link:hover {
+  color: #a0d2ff;
+  text-decoration: underline;
+}
+
+.breadcrumb-sep {
+  color: #555;
+  cursor: default;
+}
+
+.breadcrumb-current {
+  color: #ddd;
+  cursor: default;
+  font-weight: 500;
+}
+
+/* ========== 文件列表区域 ========== */
+.fb-file-area {
+  min-height: 200px;
+}
+
+.fb-file-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ========== 加载动画 ========== */
+.fb-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  gap: 10px;
+  color: #888;
+}
+
+.fb-spinner {
+  width: 22px;
+  height: 22px;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-top-color: #7eb8ff;
+  border-radius: 50%;
+  animation: fb-spin 0.7s linear infinite;
+}
+
+@keyframes fb-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ========== 空/错误状态 ========== */
+.fb-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: #666;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.fb-empty-icon {
+  font-size: 48px;
+}
+
+.fb-error {
+  text-align: center;
+  padding: 40px 20px;
+  color: #e05555;
+  line-height: 1.8;
+}
+
+.fb-error small {
+  font-size: 13px;
+  color: #888;
+}
+
+.fb-error code {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* ========== 树节点 ========== */
+.tree-node {
+  user-select: none;
+}
+
+.tree-node .row {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background 0.15s;
+  gap: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.tree-node .row:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.tree-node .row.file-row {
+  cursor: default;
+}
+
+.tree-node .row.file-row:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.tree-node .icon {
+  font-size: 20px;
+  flex-shrink: 0;
+  width: 24px;
+  text-align: center;
+}
+
+.tree-node .arrow {
+  font-size: 12px;
+  width: 16px;
+  text-align: center;
+  color: #777;
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.tree-node.expanded > .row .arrow {
+  transform: rotate(90deg);
+}
+
+.tree-node .name {
+  flex: 1;
+  font-size: 14px;
+  color: #ddd;
+  word-break: break-all;
+}
+
+.tree-node .row.file-row .name {
+  color: #bbb;
+}
+
+/* ========== 子节点容器 ========== */
+.tree-children {
+  display: none;
+  padding-left: 28px;
+}
+
+.tree-node.expanded > .tree-children {
+  display: block;
+}
+
+.empty-msg {
+  padding: 12px 16px;
+  font-size: 12px;
+  color: #666;
+}
+
+/* ========== 下载按钮 ========== */
+.download-btn {
+  padding: 5px 14px;
+  background: linear-gradient(135deg, #4a90d9, #357abd);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: inherit;
+  font-weight: 500;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+}
+
+.download-btn:hover {
+  background: linear-gradient(135deg, #5aa0e9, #4a8ad9);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(74, 144, 217, 0.3);
+}
+
+.download-btn:active {
+  transform: scale(0.96);
+}
+
+/* ========== 状态栏 ========== */
+.fb-status-bar {
+  padding: 10px 32px;
+  font-size: 12px;
+  color: #555;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* ========== 响应式 ========== */
+@media (max-width: 600px) {
+  .fb-container {
+    padding: 10px;
+  }
+  .fb-header {
+    padding: 16px 20px;
+  }
+  .fb-header-title {
+    font-size: 18px;
+  }
+  .fb-toolbar {
+    padding: 12px 20px;
+    flex-wrap: wrap;
+  }
+  .tree-node .row {
+    padding: 8px 12px;
+  }
+  .tree-children {
+    padding-left: 16px;
+  }
+  .download-btn {
+    padding: 4px 10px;
+    font-size: 11px;
+  }
+}

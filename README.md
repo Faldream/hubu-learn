@@ -1,90 +1,72 @@
-# React + Vite + Hono + Cloudflare Workers
+# 📚 湖大学习资料
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/vite-react-template)
+湖北大学课程复习资料与历年试卷在线浏览平台。
 
-This template provides a minimal setup for building a React application with TypeScript and Vite, designed to run on Cloudflare Workers. It features hot module replacement, ESLint integration, and the flexibility of Workers deployments.
+---
 
-![React + TypeScript + Vite + Cloudflare Workers](https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/fc7b4b62-442b-4769-641b-ad4422d74300/public)
+## 🙏 感谢资源贡献者
 
-<!-- dash-content-start -->
+本项目中的学习资料由以下同学热心提供，特此致谢：
 
-🚀 Supercharge your web development with this powerful stack:
+<!-- 请在此处添加贡献者名字 -->
 
-- [**React**](https://react.dev/) - A modern UI library for building interactive interfaces
-- [**Vite**](https://vite.dev/) - Lightning-fast build tooling and development server
-- [**Hono**](https://hono.dev/) - Ultralight, modern backend framework
-- [**Cloudflare Workers**](https://developers.cloudflare.com/workers/) - Edge computing platform for global deployment
+---
 
-### ✨ Key Features
+## 📖 项目简介
 
-- 🔥 Hot Module Replacement (HMR) for rapid development
-- 📦 TypeScript support out of the box
-- 🛠️ ESLint configuration included
-- ⚡ Zero-config deployment to Cloudflare's global network
-- 🎯 API routes with Hono's elegant routing
-- 🔄 Full-stack development setup
-- 🔎 Built-in Observability to monitor your Worker
+本项目旨在为湖北大学同学提供一个便捷的课程资料共享平台，支持在线浏览和下载复习资料与历年试卷。
 
-Get started in minutes with local development or deploy directly via the Cloudflare dashboard. Perfect for building modern, performant web applications at the edge.
+**主要功能：**
 
-<!-- dash-content-end -->
+- 📁 **树形文件浏览** — 按课程分类展示复习资料与试卷，支持文件夹展开/折叠
+- ⬇️ **一键下载** — 点击文件旁的下载按钮即可下载 PDF 等资料
+- 🧭 **面包屑导航** — 清晰展示当前路径，支持快速跳转
+- 📱 **响应式布局** — 适配桌面端和移动端
 
-## Getting Started
+**技术栈：** React 19 + TypeScript + Vite + Cloudflare Workers
 
-To start a new project with this template, run:
+---
 
-```bash
-npm create cloudflare@latest -- --template=cloudflare/templates/vite-react-template
-```
+## 🚀 部署流程
 
-A live deployment of this template is available at:
-[https://react-vite-template.templates.workers.dev](https://react-vite-template.templates.workers.dev)
+### 前提条件
 
-## Development
+- [Node.js](https://nodejs.org/) 18+
+- [Cloudflare 账号](https://dash.cloudflare.com/)（用于部署）
 
-Install dependencies:
+### 本地开发
 
 ```bash
+# 1. 克隆项目
+git clone <仓库地址>
+cd hubu-learn
+
+# 2. 安装依赖
 npm install
-```
 
-Start the development server with:
+# 3. 添加学习资料
+# 将复习资料和试卷放入 src/LearningMaterial/ 对应目录
+# 目录结构示例：
+#   src/LearningMaterial/
+#   ├── 复习资料/
+#   │   ├── 马克思主义原理/
+#   │   └── 数据结构/
+#   └── 试卷/
+#       ├── 马克思主义原理/
+#       └── 数据结构/
 
-```bash
+# 4. 生成文件树
+node src/react-app/utils/generate-tree.js
+
+# 5. 启动开发服务器
 npm run dev
+# 浏览器访问 http://localhost:5173
 ```
 
-Your application will be available at [http://localhost:5173](http://localhost:5173).
+### 添加新资料
 
-## Production
+1. 将文件放入 `src/LearningMaterial/` 对应子目录
+2. 运行 `node src/react-app/utils/generate-tree.js` 刷新目录树
+3. 提交并推送
 
-Build your project for production:
-
-```bash
-npm run build
-```
-
-Preview your build locally:
-
-```bash
-npm run preview
-```
-
-Deploy your project to Cloudflare Workers:
-
-```bash
-npm run build && npm run deploy
-```
-
-Monitor your workers:
-
-```bash
-npx wrangler tail
-```
-
-## Additional Resources
-
-- [Cloudflare Workers Documentation](https://developers.cloudflare.com/workers/)
-- [Vite Documentation](https://vitejs.dev/guide/)
-- [React Documentation](https://reactjs.org/)
-- [Hono Documentation](https://hono.dev/)
+> 构建时（`npm run build`）会自动执行生成脚本，无需手动操作。
