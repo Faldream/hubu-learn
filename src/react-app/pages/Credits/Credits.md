@@ -4,4 +4,4 @@ KijinSeija265  [Github试卷项目链接](https://github.com/KijinSeija265/HUBU-
 
 ---
 
-> 如果你想贡献资料，欢迎联系项目维护者。
+> 如果你想贡献资料，欢迎联系项目维护者 2873931976@qq.com

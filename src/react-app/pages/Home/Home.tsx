@@ -420,7 +420,7 @@ function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-         项目地址
+         项目地址 & 联系方式
         </a>
         <span className="fb-footer-sep">|</span>
         <Link className="fb-footer-link" to="/credits">
