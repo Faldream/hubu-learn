@@ -309,11 +309,16 @@
   color: #666;
 }
 
-/* ========== 下载按钮 ========== */
-.download-btn {
+/* ========== 下载/预览按钮 ========== */
+.file-actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.download-btn,
+.preview-btn {
   padding: 5px 14px;
-  background: linear-gradient(135deg, #4a90d9, #357abd);
-  color: #fff;
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -328,6 +333,11 @@
   text-decoration: none;
 }
 
+.download-btn {
+  background: linear-gradient(135deg, #4a90d9, #357abd);
+  color: #fff;
+}
+
 .download-btn:hover {
   background: linear-gradient(135deg, #5aa0e9, #4a8ad9);
   transform: translateY(-1px);
@@ -335,6 +345,22 @@
 }
 
 .download-btn:active {
+  transform: scale(0.96);
+}
+
+.preview-btn {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ccc;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.preview-btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.preview-btn:active {
   transform: scale(0.96);
 }
 
@@ -370,7 +396,8 @@
   .tree-children {
     padding-left: 16px;
   }
-  .download-btn {
+  .download-btn,
+  .preview-btn {
     padding: 4px 10px;
     font-size: 11px;
   }

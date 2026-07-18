@@ -1,0 +1,101 @@
+.iv-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========== 工具栏 ========== */
+.iv-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 24px;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.iv-back-link {
+  color: #7eb8ff;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.2s;
+  flex-shrink: 0;
+}
+
+.iv-back-link:hover {
+  color: #a0d2ff;
+}
+
+.iv-filename {
+  flex: 1;
+  font-size: 14px;
+  color: #bbb;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.iv-download-link {
+  padding: 6px 16px;
+  background: linear-gradient(135deg, #4a90d9, #357abd);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: inherit;
+  font-weight: 500;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.iv-download-link:hover {
+  background: linear-gradient(135deg, #5aa0e9, #4a8ad9);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(74, 144, 217, 0.3);
+}
+
+/* ========== 图片区域 ========== */
+.iv-image-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.iv-image {
+  max-width: 100%;
+  max-height: calc(100vh - 60px);
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* ========== 错误状态 ========== */
+.iv-error {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #e05555;
+  font-size: 15px;
+}
+
+.iv-error-icon {
+  font-size: 48px;
+}
+
+@media (max-width: 600px) {
+  .iv-toolbar {
+    padding: 10px 16px;
+    gap: 10px;
+  }
+  .iv-image-wrap {
+    padding: 12px;
+  }
+}

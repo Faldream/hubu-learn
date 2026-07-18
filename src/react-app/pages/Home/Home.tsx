@@ -24,6 +24,13 @@ interface Stats {
 }
 
 // ============ 工具函数 ============
+const IMAGE_EXTENSIONS = ["jpg", "jpeg", "png", "gif", "svg", "webp", "bmp"];
+
+function isImageFile(name: string): boolean {
+  const ext = name.split(".").pop()?.toLowerCase() ?? "";
+  return IMAGE_EXTENSIONS.includes(ext);
+}
+
 const FILE_ICON_MAP: Record<string, string> = {
   pdf: "📄",
   doc: "📝", docx: "📝",
@@ -145,21 +152,36 @@ function TreeNode({ item }: TreeNodeProps) {
   }
 
   // 文件节点
+  const isImage = isImageFile(item.name);
+
   return (
     <li className="tree-node">
       <div className="row file-row">
         <span className="arrow" style={{ visibility: "hidden" }}>▶</span>
         <span className="icon">{getFileIcon(item.name)}</span>
         <span className="name">{item.name}</span>
-        <a
-          className="download-btn"
-          href={`/${item.path}`}
-          download={item.name}
-          title={`下载 ${item.name}`}
-          onClick={(e) => e.stopPropagation()}
-        >
-          ⬇ 下载
-        </a>
+        <div className="file-actions">
+          {isImage && (
+            <Link
+              className="preview-btn"
+              to="/preview"
+              state={{ imagePath: item.path }}
+              title={`预览 ${item.name}`}
+              onClick={(e) => e.stopPropagation()}
+            >
+              预览
+            </Link>
+          )}
+          <a
+            className="download-btn"
+            href={`/${item.path}`}
+            download={item.name}
+            title={`下载 ${item.name}`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            ⬇ 下载
+          </a>
+        </div>
       </div>
     </li>
   );
