@@ -1,57 +1,324 @@
 [
   {
-    "name": "复习资料",
+    "name": "操作系统",
     "type": "directory",
     "children": [
       {
-        "name": "马克思主义原理",
+        "name": "2019年操作系统(A卷).doc",
+        "type": "file",
+        "path": "操作系统/2019年操作系统(A卷).doc"
+      },
+      {
+        "name": "2019年操作系统(A卷).pdf",
+        "type": "file",
+        "path": "操作系统/2019年操作系统(A卷).pdf"
+      },
+      {
+        "name": "2019年操作系统A卷答案.doc",
+        "type": "file",
+        "path": "操作系统/2019年操作系统A卷答案.doc"
+      },
+      {
+        "name": "2020级操作系统.pdf",
+        "type": "file",
+        "path": "操作系统/2020级操作系统.pdf"
+      },
+      {
+        "name": "2020级考试A卷参考答案.pdf",
+        "type": "file",
+        "path": "操作系统/2020级考试A卷参考答案.pdf"
+      },
+      {
+        "name": "2021级考试A卷.doc",
+        "type": "file",
+        "path": "操作系统/2021级考试A卷.doc"
+      },
+      {
+        "name": "2021级考试A卷参考答案.doc",
+        "type": "file",
+        "path": "操作系统/2021级考试A卷参考答案.doc"
+      }
+    ]
+  },
+  {
+    "name": "计算机网络",
+    "type": "directory",
+    "children": [
+      {
+        "name": "04-06《计算机网络》试题.pdf",
+        "type": "file",
+        "path": "计算机网络/04-06《计算机网络》试题.pdf"
+      },
+      {
+        "name": "2020级计网.docx",
+        "type": "file",
+        "path": "计算机网络/2020级计网.docx"
+      },
+      {
+        "name": "2021-2022-2计算机网络-A卷（终版）.pdf",
+        "type": "file",
+        "path": "计算机网络/2021-2022-2计算机网络-A卷（终版）.pdf"
+      },
+      {
+        "name": "2022-2023-1计算机网络-A卷（终版）.pdf",
+        "type": "file",
+        "path": "计算机网络/2022-2023-1计算机网络-A卷（终版）.pdf"
+      },
+      {
+        "name": "20计网.pdf",
+        "type": "file",
+        "path": "计算机网络/20计网.pdf"
+      }
+    ]
+  },
+  {
+    "name": "计算机系统结构",
+    "type": "directory",
+    "children": [
+      {
+        "name": "系统结构课件",
         "type": "directory",
         "children": [
           {
-            "name": "湖北大学《马克思主义基本原理》2019-2020学年期末试卷(2)(1).pdf",
+            "name": "第二章.ppt",
             "type": "file",
-            "path": "复习资料/马克思主义原理/湖北大学《马克思主义基本原理》2019-2020学年期末试卷(2)(1).pdf"
+            "path": "计算机系统结构/系统结构课件/第二章.ppt"
+          },
+          {
+            "name": "第六章.PPT",
+            "type": "file",
+            "path": "计算机系统结构/系统结构课件/第六章.PPT"
+          },
+          {
+            "name": "第七章.PPT",
+            "type": "file",
+            "path": "计算机系统结构/系统结构课件/第七章.PPT"
+          },
+          {
+            "name": "第三章.PPT",
+            "type": "file",
+            "path": "计算机系统结构/系统结构课件/第三章.PPT"
+          },
+          {
+            "name": "第四章.ppt",
+            "type": "file",
+            "path": "计算机系统结构/系统结构课件/第四章.ppt"
+          },
+          {
+            "name": "第五章.ppt",
+            "type": "file",
+            "path": "计算机系统结构/系统结构课件/第五章.ppt"
+          },
+          {
+            "name": "第一章.ppt",
+            "type": "file",
+            "path": "计算机系统结构/系统结构课件/第一章.ppt"
           }
         ]
       },
       {
-        "name": "数据结构",
+        "name": "2022答案a.doc",
+        "type": "file",
+        "path": "计算机系统结构/2022答案a.doc"
+      },
+      {
+        "name": "2022答案a.pdf",
+        "type": "file",
+        "path": "计算机系统结构/2022答案a.pdf"
+      },
+      {
+        "name": "2022系统结构a.doc",
+        "type": "file",
+        "path": "计算机系统结构/2022系统结构a.doc"
+      },
+      {
+        "name": "2022系统结构a.pdf",
+        "type": "file",
+        "path": "计算机系统结构/2022系统结构a.pdf"
+      },
+      {
+        "name": "系统结构知识点.doc",
+        "type": "file",
+        "path": "计算机系统结构/系统结构知识点.doc"
+      }
+    ]
+  },
+  {
+    "name": "计算机组成原理",
+    "type": "directory",
+    "children": [
+      {
+        "name": "2018A计算机组成原理试卷.pdf",
+        "type": "file",
+        "path": "计算机组成原理/2018A计算机组成原理试卷.pdf"
+      },
+      {
+        "name": "2019级计算机组成原理.doc",
+        "type": "file",
+        "path": "计算机组成原理/2019级计算机组成原理.doc"
+      }
+    ]
+  },
+  {
+    "name": "软件工程",
+    "type": "directory",
+    "children": [
+      {
+        "name": "2018年",
         "type": "directory",
         "children": [
           {
-            "name": "2018级数据结构(A卷).pdf",
+            "name": "1.png",
             "type": "file",
-            "path": "复习资料/数据结构/2018级数据结构(A卷).pdf"
+            "path": "软件工程/2018年/1.png"
+          },
+          {
+            "name": "2.png",
+            "type": "file",
+            "path": "软件工程/2018年/2.png"
+          },
+          {
+            "name": "3.png",
+            "type": "file",
+            "path": "软件工程/2018年/3.png"
+          },
+          {
+            "name": "4.png",
+            "type": "file",
+            "path": "软件工程/2018年/4.png"
+          },
+          {
+            "name": "5.png",
+            "type": "file",
+            "path": "软件工程/2018年/5.png"
+          },
+          {
+            "name": "6.png",
+            "type": "file",
+            "path": "软件工程/2018年/6.png"
           }
         ]
       }
     ]
   },
   {
-    "name": "试卷",
+    "name": "数据结构",
     "type": "directory",
     "children": [
       {
-        "name": "马克思主义原理",
-        "type": "directory",
-        "children": [
-          {
-            "name": "湖北大学《马克思主义基本原理》2020-2021学年期末试卷(2)(1).pdf",
-            "type": "file",
-            "path": "试卷/马克思主义原理/湖北大学《马克思主义基本原理》2020-2021学年期末试卷(2)(1).pdf"
-          }
-        ]
+        "name": "2018级数据结构(A卷).pdf",
+        "type": "file",
+        "path": "数据结构/2018级数据结构(A卷).pdf"
       },
       {
-        "name": "数据结构",
-        "type": "directory",
-        "children": [
-          {
-            "name": "2021级数据结构(A卷).pdf",
-            "type": "file",
-            "path": "试卷/数据结构/2021级数据结构(A卷).pdf"
-          }
-        ]
+        "name": "2021级数据结构(A卷).pdf",
+        "type": "file",
+        "path": "数据结构/2021级数据结构(A卷).pdf"
+      },
+      {
+        "name": "2021级数据结构考试试卷_2.pdf",
+        "type": "file",
+        "path": "数据结构/2021级数据结构考试试卷_2.pdf"
+      }
+    ]
+  },
+  {
+    "name": "数据库",
+    "type": "directory",
+    "children": [
+      {
+        "name": "2018级数据库.pdf",
+        "type": "file",
+        "path": "数据库/2018级数据库.pdf"
+      },
+      {
+        "name": "2021级数据库.pdf",
+        "type": "file",
+        "path": "数据库/2021级数据库.pdf"
+      }
+    ]
+  },
+  {
+    "name": "数字逻辑",
+    "type": "directory",
+    "children": [
+      {
+        "name": "2021A数字逻辑试卷.pdf",
+        "type": "file",
+        "path": "数字逻辑/2021A数字逻辑试卷.pdf"
+      }
+    ]
+  },
+  {
+    "name": "算法",
+    "type": "directory",
+    "children": [
+      {
+        "name": "2015算法设计与分析考试试题.pdf",
+        "type": "file",
+        "path": "算法/2015算法设计与分析考试试题.pdf"
+      },
+      {
+        "name": "2017级算法设计与分析A卷.pdf",
+        "type": "file",
+        "path": "算法/2017级算法设计与分析A卷.pdf"
+      },
+      {
+        "name": "2018级算法设计与分析B卷.pdf",
+        "type": "file",
+        "path": "算法/2018级算法设计与分析B卷.pdf"
+      },
+      {
+        "name": "2018级算法设计与分析B卷答案.pdf",
+        "type": "file",
+        "path": "算法/2018级算法设计与分析B卷答案.pdf"
+      },
+      {
+        "name": "2020级算法.doc",
+        "type": "file",
+        "path": "算法/2020级算法.doc"
+      },
+      {
+        "name": "2022-2023 算法设计与分析实验期末考核.doc",
+        "type": "file",
+        "path": "算法/2022-2023 算法设计与分析实验期末考核.doc"
+      },
+      {
+        "name": "2022-2023-1-算法设计与分析试卷.pdf",
+        "type": "file",
+        "path": "算法/2022-2023-1-算法设计与分析试卷.pdf"
+      },
+      {
+        "name": "2022-2023-1-算法设计与分析A卷-答案.pdf",
+        "type": "file",
+        "path": "算法/2022-2023-1-算法设计与分析A卷-答案.pdf"
+      },
+      {
+        "name": "2022算法设计与分析期末考试试卷A卷.pdf",
+        "type": "file",
+        "path": "算法/2022算法设计与分析期末考试试卷A卷.pdf"
+      }
+    ]
+  },
+  {
+    "name": "EDA",
+    "type": "directory",
+    "children": [
+      {
+        "name": "2016-2017年EDA.docx",
+        "type": "file",
+        "path": "EDA/2016-2017年EDA.docx"
+      }
+    ]
+  },
+  {
+    "name": "java",
+    "type": "directory",
+    "children": [
+      {
+        "name": "2020年A卷.pdf",
+        "type": "file",
+        "path": "java/2020年A卷.pdf"
       }
     ]
   }

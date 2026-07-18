@@ -7,8 +7,7 @@
 ## 🙏 感谢资源贡献者
 
 本项目中的学习资料由以下同学热心提供，特此致谢：
-
-<!-- 请在此处添加贡献者名字 -->
+KijinSeija265  [Github试卷项目链接](https://github.com/KijinSeija265/HUBU-CS-Exam)
 
 ---
 

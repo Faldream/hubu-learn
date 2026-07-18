@@ -72,6 +72,66 @@
   transform: scale(0.97);
 }
 
+/* ========== 搜索框 ========== */
+.fb-search {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  max-width: 360px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 0 10px;
+  transition: border-color 0.2s;
+}
+
+.fb-search:focus-within {
+  border-color: rgba(74, 144, 217, 0.5);
+}
+
+.fb-search-icon {
+  font-size: 14px;
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+.fb-search-input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: #ddd;
+  font-size: 13px;
+  font-family: inherit;
+  padding: 8px 0;
+}
+
+.fb-search-input::placeholder {
+  color: #666;
+}
+
+.fb-search-clear {
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 2px 4px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  transition: color 0.15s;
+}
+
+.fb-search-clear:hover {
+  color: #ddd;
+}
+
+/* 搜索模式下自动展开 */
+.fb-file-list.search-active .tree-node {
+  /* 搜索时通过 JS 展开 */
+}
+
 /* ========== 面包屑 ========== */
 .breadcrumb {
   display: flex;
@@ -314,4 +374,28 @@
     padding: 4px 10px;
     font-size: 11px;
   }
+}
+
+/* ========== 页脚 ========== */
+.fb-footer {
+  text-align: center;
+  padding: 20px 32px;
+  margin-top: 20px;
+}
+
+.fb-footer-link {
+  color: #888;
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.fb-footer-link:hover {
+  color: #bbb;
+}
+
+.fb-footer-sep {
+  color: #444;
+  margin: 0 12px;
+  font-size: 13px;
 }

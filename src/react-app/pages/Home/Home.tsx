@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, useMemo } from "react";
+import { Link } from "react-router-dom";
 import "./Home.css";
 import fileTreeData from "../../../LearningMaterial/fileTree.json";
 
@@ -79,6 +80,35 @@ function findItemsByPath(tree: TreeItem[], pathStr: string): TreeItem[] | null {
   return items;
 }
 
+// 递归过滤树：保留名称匹配的条目，目录若含匹配子项也保留
+function filterTree(items: TreeItem[], query: string): TreeItem[] {
+  const lowerQuery = query.toLowerCase();
+  const result: TreeItem[] = [];
+
+  for (const item of items) {
+    if (item.type === "directory") {
+      const nameMatch = item.name.toLowerCase().includes(lowerQuery);
+      if (item.children) {
+        const filteredChildren = filterTree(item.children, query);
+        if (nameMatch || filteredChildren.length > 0) {
+          result.push({
+            ...item,
+            children: nameMatch ? item.children : filteredChildren,
+          });
+        }
+      } else if (nameMatch) {
+        result.push(item);
+      }
+    } else {
+      if (item.name.toLowerCase().includes(lowerQuery)) {
+        result.push(item);
+      }
+    }
+  }
+
+  return result;
+}
+
 // ============ TreeNode 组件 ============
 interface TreeNodeProps {
   item: TreeItem;
@@ -153,7 +183,7 @@ function Breadcrumb({ path, onNavigate }: BreadcrumbProps) {
         className={!path ? "breadcrumb-current" : "breadcrumb-link"}
         onClick={() => onNavigate("")}
       >
-        🏠 根目录
+        根目录
       </span>
       {parts.map((part, index) => {
         const targetPath = parts.slice(0, index + 1).join("/");
@@ -182,6 +212,7 @@ function Home() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [allExpanded, setAllExpanded] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   // 加载目录树（从导入的 JSON 数据初始化）
   const loadTree = useCallback(() => {
@@ -200,11 +231,14 @@ function Home() {
     loadTree();
   }, [loadTree]);
 
-  // 当前显示的条目
+  // 当前显示的条目（考虑搜索过滤）
   const currentItems = useMemo(() => {
     if (!fullTree) return null;
-    return findItemsByPath(fullTree, currentPath);
-  }, [fullTree, currentPath]);
+    const baseItems = searchQuery
+      ? filterTree(fullTree, searchQuery)
+      : findItemsByPath(fullTree, currentPath);
+    return baseItems;
+  }, [fullTree, currentPath, searchQuery]);
 
   // 统计信息
   const stats = useMemo(() => {
@@ -234,6 +268,29 @@ function Home() {
     });
   };
 
+  // 搜索时自动展开全部
+  const isSearching = searchQuery.trim().length > 0;
+
+  // 清除搜索
+  const handleClearSearch = () => {
+    setSearchQuery("");
+  };
+
+  // 搜索时自动展开，取消搜索时恢复
+  useEffect(() => {
+    if (!isSearching) return;
+    // 延迟执行，确保 DOM 已渲染
+    const timer = setTimeout(() => {
+      const allNodes = document.querySelectorAll(".fb-file-list .tree-node");
+      allNodes.forEach((node) => {
+        node.classList.add("expanded");
+        const icon = node.querySelector(".folder-icon");
+        if (icon) icon.textContent = "📂";
+      });
+    }, 0);
+    return () => clearTimeout(timer);
+  }, [isSearching, currentItems]);
+
   // 导航到指定路径
   const handleNavigate = (path: string) => {
     setCurrentPath(path);
@@ -251,12 +308,28 @@ function Home() {
         {/* 工具栏 */}
         <div className="fb-toolbar">
           <button className="fb-btn" onClick={handleRefresh}>
-            🔄 刷新
+            刷新
           </button>
           <button className="fb-btn" onClick={handleToggleAll}>
             {allExpanded ? "📁 全部折叠" : "📂 全部展开"}
           </button>
-          <Breadcrumb path={currentPath} onNavigate={handleNavigate} />
+          <div className="fb-search">
+            <input
+              type="text"
+              className="fb-search-input"
+              placeholder="搜索文件或文件夹..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            {isSearching && (
+              <button className="fb-search-clear" onClick={handleClearSearch}>
+                ✕
+              </button>
+            )}
+          </div>
+          {!isSearching && (
+            <Breadcrumb path={currentPath} onNavigate={handleNavigate} />
+          )}
         </div>
 
         {/* 文件列表 */}
@@ -287,11 +360,18 @@ function Home() {
           )}
 
           {!loading && !error && currentItems && currentItems.length > 0 && (
-            <ul className="fb-file-list">
+            <ul className={`fb-file-list ${isSearching ? "search-active" : ""}`}>
               {currentItems.map((item, i) => (
                 <TreeNode key={`${item.name}-${i}`} item={item} depth={0} />
               ))}
             </ul>
+          )}
+
+          {isSearching && !loading && !error && currentItems && currentItems.length === 0 && (
+            <div className="fb-empty">
+              <span className="fb-empty-icon">🔍</span>
+              <span>未找到匹配 "{searchQuery}" 的结果</span>
+            </div>
           )}
         </div>
 
@@ -309,6 +389,22 @@ function Home() {
           <span>{currentPath ? `📂 ${currentPath}` : "📂 根目录"}</span>
         </div>
       </div>
+
+      {/* 页脚 */}
+      <footer className="fb-footer">
+        <a
+          className="fb-footer-link"
+          href="https://github.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+         项目地址
+        </a>
+        <span className="fb-footer-sep">|</span>
+        <Link className="fb-footer-link" to="/credits">
+         致谢名单
+        </Link>
+      </footer>
     </div>
   );
 }

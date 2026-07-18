@@ -1,0 +1,133 @@
+.credits-container {
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.credits-card {
+  max-width: 600px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  padding: 32px;
+  align-self: flex-start;
+}
+
+.credits-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.credits-back {
+  color: #7eb8ff;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.2s;
+  flex-shrink: 0;
+}
+
+.credits-back:hover {
+  color: #a0d2ff;
+}
+
+.credits-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* ========== Markdown 渲染区域 ========== */
+.credits-markdown {
+  color: #ccc;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.credits-markdown h1 {
+  font-size: 20px;
+  color: #eee;
+  margin: 16px 0 12px;
+}
+
+.credits-markdown h2 {
+  font-size: 17px;
+  color: #eee;
+  margin: 16px 0 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.credits-markdown h3 {
+  font-size: 15px;
+  color: #ddd;
+  margin: 14px 0 8px;
+}
+
+.credits-markdown p {
+  margin: 8px 0;
+  color: #bbb;
+}
+
+.credits-markdown ul,
+.credits-markdown ol {
+  padding-left: 20px;
+  margin: 8px 0;
+}
+
+.credits-markdown li {
+  margin: 4px 0;
+  color: #bbb;
+}
+
+.credits-markdown strong {
+  color: #eee;
+}
+
+.credits-markdown blockquote {
+  border-left: 3px solid rgba(74, 144, 217, 0.5);
+  padding: 8px 16px;
+  margin: 12px 0;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 0 8px 8px 0;
+  color: #999;
+  font-size: 13px;
+}
+
+.credits-markdown hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin: 16px 0;
+}
+
+.credits-markdown code {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.credits-markdown a {
+  color: #7eb8ff;
+}
+
+.credits-markdown a:hover {
+  color: #a0d2ff;
+}
+
+@media (max-width: 600px) {
+  .credits-container {
+    padding: 20px 10px;
+  }
+  .credits-card {
+    padding: 24px 20px;
+  }
+}
