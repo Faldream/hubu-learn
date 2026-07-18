@@ -2,14 +2,11 @@
 .fb-container {
   min-height: 100vh;
   padding: 20px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
 }
 
 .fb-inner {
   max-width: 900px;
-  width: 100%;
+  margin: 0 auto;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(20px);
   border-radius: 20px;
